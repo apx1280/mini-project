@@ -5,9 +5,25 @@
         <meta charset="UTF-8" />
         <link href="https://fonts.googleapis.com/css?family=Saira+Stencil+One&display=swap" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="./src/styles/style.css">
+        <link rel="stylesheet" href="./src/styles/preloader.css">
     </head>
-    <body> 
-        <canvas id="canvas"> </canvas>
+    <body>
+            <div class="container">
+                <div class="dxball">
+                    <p class="dx-text">DX-Ball</p>
+                </div>
+                <div class="text">
+                    <h1>Loading...</h1>
+                </div>
+                <div class="bar">
+                    <div class="lineBar">
+                        <div class="line"></div>
+                    </div>
+                </div>
+            </div>
+            <canvas id="canvas"> </canvas>
+
+        <script src="./src/js/preloader.js"></script>
         <script src="src/js/game.js" type="module"></script>
         <script src="./src/js/bricks.js" type="module"></script>
     </body>

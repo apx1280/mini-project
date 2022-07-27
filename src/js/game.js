@@ -10,10 +10,7 @@ var canvas,
     maxTablet = window.matchMedia('(max-width: 1024px)'),
     minDesktop = window.matchMedia('(min-width: 1024px)'),
     maxDesktop = window.matchMedia('(max-width: 1440px)');
-
-
-
-
+    
 function go() {
   // canvas
   canvas = document.getElementById("canvas");

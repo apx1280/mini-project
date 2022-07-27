@@ -6,6 +6,8 @@ body {
     -moz-user-select: none;
     -ms-user-select: none;
     position: relative;
+    height: 100vh;
+    overflow: hidden;
 }
 
 #canvas {
