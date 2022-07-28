@@ -4,6 +4,7 @@
         <title>DX-BALL</title>
         <meta charset="UTF-8" />
         <link href="https://fonts.googleapis.com/css?family=Saira+Stencil+One&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="./src/styles/style.css">
         <link rel="stylesheet" href="./src/styles/preloader.css">
     </head>
@@ -22,9 +23,16 @@
                 </div>
             </div>
             <canvas id="canvas"> </canvas>
+            <div class="playbtn">
+                <div class="row text-center">
+                    <button type="button" class="btn btn-lg btn-primary" id="start" autofocus>Start / Resume</button>
+                    <button type="button" class="btn btn-lg btn-danger hidden" id="pause">Pause</button>
+                </div>
+            </div>
 
         <script src="./src/js/preloader.js"></script>
         <script src="src/js/game.js" type="module"></script>
         <script src="./src/js/bricks.js" type="module"></script>
+        <script src="./src/js/custompopup.js" type="module"></script>
     </body>
 </html>
