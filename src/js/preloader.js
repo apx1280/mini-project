@@ -1,9 +1,11 @@
+
 let i = 0,
-    preLoad = document.querySelector(".pre_loader");
-    line = document.querySelector(".line"), 
-    text = document.querySelector(".text"),
-    width = 1, 
-    interVal;
+container = document.querySelector(".container");
+preLoad = document.querySelector(".pre_loader");
+line = document.querySelector(".line"), 
+text = document.querySelector(".text"),
+width = 1, 
+interVal = 0;
 
 const animateBar = (setInterVal)  => {
   if (i == 0) {
@@ -12,6 +14,7 @@ const animateBar = (setInterVal)  => {
     const frame = () => {
       if (width >= 100) {
         clearInterval(interVal);
+        container.remove();
         i = 0;
       } else {
         width++;
