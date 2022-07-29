@@ -8,7 +8,7 @@ var brickRow = 5,
     num,
     count = 0,
     colors = [
-        "#1f1f1f",
+        "#fff"
     ];
 
 export const bricksetup = () => {
@@ -42,6 +42,12 @@ function bricks(context, brickWidth, brickHeight) {
         context.rect(brickX, brickY, brickWidth, brickHeight);
         context.fillStyle = bricks[c][r].color;
         context.fill();
+        context.rect(50, 50, 100, 100);
+context.fillStyle = 'white';
+context.shadowColor = 'black';
+context.shadowBlur = 25;
+context.shadowOffsetX = 10;
+context.shadowOffsetY = 10;
         context.closePath();
       }
     }

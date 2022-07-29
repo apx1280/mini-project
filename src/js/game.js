@@ -8,14 +8,10 @@ var canvas,
   context,
   brickWidth = 117,
   brickHeight = 35,
-  maxMob = window.matchMedia("(max-width: 768px)"),
-  minTab = window.matchMedia("(min-width: 769px)"),
-  maxTab = window.matchMedia("(max-width: 1024px)"),
   minLap = window.matchMedia("(min-width: 1024px)"),
-  minLap1 = window.matchMedia("(max-width: 1280px)");
-  var paddleHeight = 10;
-var paddleWidth = 100;
-  var paddleX = (document.documentElement.clientWidth - paddleWidth) / 2;;
+  paddleHeight = 10,
+  paddleWidth = 100,
+  paddleX = (document.documentElement.clientWidth - paddleWidth) / 2;;
   
 
 function go() {
@@ -40,6 +36,7 @@ function go() {
 }
 go();
 window.addEventListener("resize", go);
+
 var ballRadius = 10;
 var x = canvas.width / 2;
 var y = canvas.height - 30;
