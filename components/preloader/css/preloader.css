@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    padding-bottom: 11%;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+    background-image: linear-gradient(to right, #00bcd4, #25163f, #000000);
+    z-index: 10;
+    overflow: hidden;
+}
+
+.container .dx-text {
+    position: absolute;
+    top: 20%;
+    color: #b5c51b;
+    font-size: 3em;
+    font-weight: 800;
+    letter-spacing: 1px;
+    word-spacing: 10px;
+    text-shadow: 2px 5px 10px #3d0c08;
+    z-index: 5;
+}
+
+.container .bar h1 {
+    color: #fff;
+    letter-spacing: 2px;
+    font-size: 20px;
+    text-align: right;
+    width: 100%;
+    position: relative;
+}
+
+.state {
+    color: #ffeb3b;
+    letter-spacing: 0;
+    font-size: 12px;
+    font-weight: 800;
+    position: absolute;
+}
+
+.container .bar {
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 5;
+}
+
+.container .bar .lineBar {
+    padding: 2px;
+    width: 500px;
+    min-width: 200px;
+    height: 20px;
+    border: 2px solid #086e91;
+    border-radius: 29px;
+}
+
+.container .bar .lineBar .line {
+    height: 12px;
+    border-radius: 20px;
+    background: #29c9ff;
+    width: 0%;
+}
+
+.gearItem {
+    position: absolute;
+    z-index: 1;
+    width: 100px;
+}
+
+#gearItem2 {
+    top: 126px;
+    width: 150px;
+}
+
+.gearItem .gearImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: drop-shadow(11px 7px 10px #000);
+}
+
+.gearbar {
+    position: absolute;
+    width: 100px;
+    height: 10px;
+    background: #000;
+    top: 44%;
+    left: 78%;
+}
+
+/* .bounce {
+    position: absolute;
+    left: -10px;
+    animation:bounce 2s infinite;
+  }
+  
+  @keyframes bounce {
+    0%       { bottom:0px; }
+    10%     { bottom:0px; }
+    30%      { bottom:0em; }
+    60%      { bottom:10em; }
+    100%     {bottom:0;}
+  } */

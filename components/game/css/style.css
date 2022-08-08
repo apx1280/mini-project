@@ -1,6 +1,5 @@
 body {
     background-color:#31393c;
-    color:#d8d78f;
     margin: 0;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -8,10 +7,16 @@ body {
     position: relative;
     height: 100vh;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #canvas {
-    background-color: #6d9086;
+    background-image: url("../../images/bg.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
     display:block;
     margin:0 auto;
     cursor: pointer;
@@ -45,7 +50,8 @@ body {
     bottom: 0rem;
     width: 100%;
     right: 0;
-    display: flex;
+    display: none;
+    z-index: 2;
     align-items: center;
     justify-content: center;
 }
@@ -111,4 +117,49 @@ body {
         color: #fff;
         font-family: cursive;
         /* text-shadow: 0 0 7px #fff, 0 0 2px #fff, 0 0 21px #fff, 0 0 42px #bc13fe, 0 0 82px #bc13fe, 0 0 92px #bc13fe, 0 0 102px #bc13fe, 0 0 151px #bc13fe; */
+    }
+    #gameover{
+        position: absolute;
+        width : 400px;
+        height: 500px;
+        background: rgba(0,0,0,0.5);
+        display: none;
+    }
+    #youwon{
+        width: 100px;
+        position: absolute;
+        top : 200px;
+        left : 150px;
+        display: none;
+    }
+    #youlose{
+        width:400px;
+        position: absolute;
+        top: 100px;
+        left : 0px;
+        display: none;
+    }
+    #restart{
+        position: absolute;
+        top: 310px;
+        left : 155px;
+        cursor: pointer;
+        font-size: 1.25em;
+        color : #FFF;
+    }
+
+    .leaderboard{
+        width: 50px;
+        height: 50px;
+        z-index: 10;
+        position: absolute;
+        top: 1%;
+        left: 1%;
+        cursor: pointer;
+    }
+
+    .leaderboard img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
