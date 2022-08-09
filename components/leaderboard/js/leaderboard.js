@@ -13,7 +13,6 @@ const leaderBoard = () => {
   var rank = 1;
 
   function sortArray(e) {
-    debugger;
     return function (a, b) {
       var result = a[e] > b[e] ? -1 : a[e] < b[e] ? 1 : 0;
       return result;
