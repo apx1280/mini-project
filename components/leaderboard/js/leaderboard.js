@@ -11,13 +11,13 @@ const leaderBoard = () => {
 
   let leaderbody = document.querySelector(".leaderbody");
   var rank = 1;
-  shoUsers.map((item) => {
+  shoUsers.slice(0, 5).map((item) => {
       return leaderbody.insertAdjacentHTML(
           "beforeend",
           "<tr> <td>" +
           rank++ +
           "</td><td>" +
-          item.FirstName +
+          item.FirstName +" "+item.LastName+
           "</td><td>" +
           item.score +
           "</td><td>" +
