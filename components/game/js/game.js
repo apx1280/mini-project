@@ -2,6 +2,7 @@
 import customPop from "./custompopup.js";
 // import { bricksetup } from "./bricks.js";
 import leaderBoard from "../../leaderboard/js/leaderboard.js";
+import { updateScore } from "../../leaderboard/js/leaderboard.js";
 
 var canvas,
   context,
@@ -156,6 +157,7 @@ function levelUp(){
       
       if(LEVEL >= MAX_LEVEL){
           showYouWin();
+          updateScore(level, score);
           flag = 0;
           return;
       }
@@ -241,6 +243,7 @@ function draw() {
     flag = 0;
     if(lives == 0){
         alert("Game Over. Your Score is : "+score);
+        // updateScore(level, score);
         scorearray.push(score);
         score = 0;
     } else {
@@ -426,14 +429,6 @@ function showYouWin(){
     youwon.style.display = "block";
 }
 
-const updateScore = () => {
-  var id = JSON.parse(localStorage.getItem("currentuser"))[0].id;
-  JSON.parse(localStorage.getItem("allusrs")).forEach((ele) => {
-    if(ele.id == id){ 
-      console.log(score);
-        ele.score = score;
-    }
-});
-}
 
-updateScore();
+
+

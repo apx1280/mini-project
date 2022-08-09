@@ -1,13 +1,6 @@
 xxl = window.matchMedia("screen and (max-width: 768px)");
 
-var obj = [
-  { sr: 1, name: "Maria Anders", score: 15000, level: "10" },
-  { sr: 2, name: "Francisco Chang", score: 8000, level: "8" },
-  { sr: 3, name: "Roland Mendel", score: 5000, level: "4" },
-  { sr: 4, name: "Maria Anders", score: 100, level: "1" }
-];
-
-console.log(localStorage.getItem("allusrs"))
+var shoUsers = JSON.parse(localStorage.getItem("allusrs"));
 
 const leaderBoard = () => {
   const dom = document.querySelector("body");
@@ -17,13 +10,14 @@ const leaderBoard = () => {
   );
 
   let leaderbody = document.querySelector(".leaderbody");
-  obj.reverse().map((item) => {
+  var rank = 1;
+  shoUsers.map((item) => {
       return leaderbody.insertAdjacentHTML(
-          "afterbegin",
+          "beforeend",
           "<tr> <td>" +
-          item.sr +
+          rank++ +
           "</td><td>" +
-          item.name +
+          item.FirstName +
           "</td><td>" +
           item.score +
           "</td><td>" +
@@ -38,6 +32,13 @@ const leaderBoard = () => {
             leaderWrapper.remove();
         });
         media();
+        window.addEventListener(
+          "resize",
+          () => {
+            media();
+          },
+          true
+        );
     };
 
 const media = () => {
@@ -50,11 +51,20 @@ const media = () => {
   }
 };
 
-window.addEventListener(
-  "resize",
-  () => {
-    media();
-  },
-  true
-);
+
+
+export const updateScore = () => {
+  var currid = JSON.parse(localStorage.getItem("currentuser"))[0].id;
+  var allUsers = JSON.parse(localStorage.getItem("allusrs"));
+  
+  allUsers.forEach((ele) => {
+    if(ele.id == currid){ 
+       ele.score = 1000;
+       ele.level = 24;
+    }
+});
+console.log(JSON.stringify(allUsers));
+localStorage.setItem("allusrs",JSON.stringify(allUsers));
+}
+
 export default leaderBoard;
