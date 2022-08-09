@@ -53,14 +53,14 @@ const media = () => {
 
 
 
-export const updateScore = () => {
+export const updateScore = (score, LEVEL) => {
   var currid = JSON.parse(localStorage.getItem("currentuser"))[0].id;
   var allUsers = JSON.parse(localStorage.getItem("allusrs"));
   
   allUsers.forEach((ele) => {
     if(ele.id == currid){ 
-       ele.score = 1000;
-       ele.level = 24;
+       ele.score = score;
+       ele.level = LEVEL;
     }
 });
 console.log(JSON.stringify(allUsers));

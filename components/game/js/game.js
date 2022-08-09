@@ -157,7 +157,7 @@ function levelUp(){
       
       if(LEVEL >= MAX_LEVEL){
           showYouWin();
-          updateScore(level, score);
+          updateScore(score, LEVEL);
           flag = 0;
           return;
       }
@@ -242,10 +242,11 @@ function draw() {
     LIFE_LOST.play();
     flag = 0;
     if(lives == 0){
-        alert("Game Over. Your Score is : "+score);
-        // updateScore(level, score);
+      alert("Game Over. Your Score is : "+score);
+        updateScore(score, LEVEL);
         scorearray.push(score);
         score = 0;
+        document.location.reload();
     } else {
         flag = 1;
         paddleX = (canvas.width - paddleWidth) / 2;
