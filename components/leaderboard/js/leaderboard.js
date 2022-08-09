@@ -11,35 +11,49 @@ const leaderBoard = () => {
 
   let leaderbody = document.querySelector(".leaderbody");
   var rank = 1;
-  shoUsers.slice(0, 5).map((item) => {
+
+  function sortArray(e) {
+    debugger;
+    return function (a, b) {
+      var result = a[e] > b[e] ? -1 : a[e] < b[e] ? 1 : 0;
+      return result;
+    };
+  }
+
+  shoUsers
+    .sort(sortArray("score"))
+    .slice(0, 5)
+    .map((item) => {
       return leaderbody.insertAdjacentHTML(
-          "beforeend",
-          "<tr> <td>" +
+        "beforeend",
+        "<tr> <td>" +
           rank++ +
           "</td><td>" +
-          item.FirstName +" "+item.LastName+
+          item.FirstName +
+          " " +
+          item.LastName +
           "</td><td>" +
           item.score +
           "</td><td>" +
           item.level +
           "</td></tr>"
-          );
-        });
-        
-        let leaderclose = document.querySelector(".leaderclose");
-        let leaderWrapper = document.querySelector(".leaderWrapper");
-        leaderclose.addEventListener("click",() => {
-            leaderWrapper.remove();
-        });
-        media();
-        window.addEventListener(
-          "resize",
-          () => {
-            media();
-          },
-          true
-        );
-    };
+      );
+    });
+
+  let leaderclose = document.querySelector(".leaderclose");
+  let leaderWrapper = document.querySelector(".leaderWrapper");
+  leaderclose.addEventListener("click", () => {
+    leaderWrapper.remove();
+  });
+  media();
+  window.addEventListener(
+    "resize",
+    () => {
+      media();
+    },
+    true
+  );
+};
 
 const media = () => {
   let leaderB = document.querySelector(".leaderWrapper .wrapper");
@@ -51,20 +65,18 @@ const media = () => {
   }
 };
 
-
-
 export const updateScore = (score, LEVEL) => {
   var currid = JSON.parse(localStorage.getItem("currentuser"))[0].id;
   var allUsers = JSON.parse(localStorage.getItem("allusrs"));
-  
+
   allUsers.forEach((ele) => {
-    if(ele.id == currid){ 
-       ele.score = score;
-       ele.level = LEVEL;
+    if (ele.id == currid) {
+      ele.score = score;
+      ele.level = LEVEL;
     }
-});
-console.log(JSON.stringify(allUsers));
-localStorage.setItem("allusrs",JSON.stringify(allUsers));
-}
+  });
+  console.log(JSON.stringify(allUsers));
+  localStorage.setItem("allusrs", JSON.stringify(allUsers));
+};
 
 export default leaderBoard;
