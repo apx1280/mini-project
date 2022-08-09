@@ -2,7 +2,7 @@
 const popCta =  () => {
     var ctaBtn = document.querySelector(".cta");
     ctaBtn.addEventListener('click',()=>{
-        document.location = 'login.html';
+        document.location.reload();
     });
 }
 
